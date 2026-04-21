@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -7,24 +7,24 @@
     <!-- PWA & Add to Home Screen Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="PATO IOS">
+    <meta name="apple-mobile-web-app-title" content="PATO iOS">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#00e5ff">
     
     <!-- Web App Manifest (inline) -->
-    <link rel="manifest" href="data:application/manifest+json,{ %22name%22: %22PATO IOS V.3%22, %22short_name%22: %22PATO%22, %22description%22: %22PATO iOS Performance Panel%22, %22start_url%22: %22.%22, %22display%22: %22standalone%22, %22background_color%22: %22%23020408%22, %22theme_color%22: %22%2300e5ff%22, %22icons%22: [ { %22src%22: %22https://i.postimg.cc/vZmhzDTv/IMG-20260421-111123-019.jpg%22, %22sizes%22: %22512x512%22, %22type%22: %22image/jpeg%22, %22purpose%22: %22any%20maskable%22 } ] }">
+    <link rel="manifest" href="data:application/manifest+json,{ %22name%22: %22PATO iOS Panel%22, %22short_name%22: %22PATO%22, %22description%22: %22iOS Performance Panel%22, %22start_url%22: %22.%22, %22display%22: %22standalone%22, %22background_color%22: %22%23020408%22, %22theme_color%22: %22%2300e5ff%22, %22icons%22: [ { %22src%22: %22https://i.postimg.cc/vZmhzDTv/IMG-20260421-111123-019.jpg%22, %22sizes%22: %22512x512%22, %22type%22: %22image/jpeg%22, %22purpose%22: %22any%20maskable%22 } ] }">
     
     <link rel="apple-touch-icon" href="https://i.postimg.cc/vZmhzDTv/IMG-20260421-111123-019.jpg">
     
-    <title>PATO IOS V.3</title>
+    <title>PATO iOS Panel</title>
 
     <style>
-        /* ----- CSS คงเดิม (เปลี่ยนเฉพาะ default theme) ----- */
+        /* ----- CSS remains the same, default theme cyan ----- */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap');
 
         :root {
-            --accent: #00e5ff;        /* เปลี่ยนเป็นสีฟ้า */
-            --accent2: #0077ff;       /* เปลี่ยนเป็นสีน้ำเงิน */
+            --accent: #00e5ff;
+            --accent2: #0077ff;
             --bg-deep: #020408;
             --bg-card: rgba(0,229,255,0.04);
             --border: rgba(0,229,255,0.12);
@@ -35,7 +35,6 @@
             --accent2-rgb: 0,119,255;
         }
 
-        /* … CSS อื่นๆ เหมือนเดิมทุกประการ … */
         @keyframes gradMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
         @keyframes slideIn { from{opacity:0;transform:translateX(15px)} to{opacity:1;transform:translateX(0)} }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
@@ -438,17 +437,17 @@
 <div id="particles-js"></div>
 <div id="toast"></div>
 
-<!-- LOGIN -->
+<!-- LOGIN SCREEN -->
 <div id="login-screen" class="glass">
-    <div class="login-logo">PATO IOS</div>
-    <div class="login-sub">PERFORMANCE PANEL V.3</div>
+    <div class="login-logo">PATO iOS</div>
+    <div class="login-sub">PERFORMANCE PANEL</div>
     <div class="login-input-wrap">
         <input type="password" id="pass-input" placeholder="● ● ● ● ● ● ●" onkeydown="if(event.key==='Enter')handleLogin()">
     </div>
     <button class="login-btn" onclick="handleLogin()">AUTHENTICATE</button>
     <div id="loading-container">
         <div class="prog-bg"><div id="p-bar" class="prog-bar"></div></div>
-        <div id="p-text">INITIALIZING PATO IOS ENGINE...</div>
+        <div id="p-text">INITIALIZING iOS ENGINE...</div>
     </div>
 </div>
 
@@ -462,45 +461,29 @@
             <div class="win-dot" style="background:#ffbd2e"></div>
             <div class="win-dot" style="background:#27c93f"></div>
         </div>
-        <div class="header-title" id="top-title">PATO IOS V.3</div>
+        <div class="header-title" id="top-title">PATO iOS PANEL</div>
         <div class="header-fps" id="top-fps">∿ 60.0 FPS</div>
     </div>
 
     <div class="main-container">
 
-        <!-- SIDEBAR (เหมือนเดิม) -->
+        <!-- SIDEBAR (English) -->
         <div class="sidebar">
             <div class="sidebar-top">
-                <div class="nav-item active" onclick="openTab(event,'combat')">
-                    <div class="nav-dot"></div>COMBAT
-                </div>
-                <div class="nav-item" onclick="openTab(event,'sensitive')">
-                    <div class="nav-dot"></div>SENSITIVE
-                </div>
-                <div class="nav-item" onclick="openTab(event,'optimize')">
-                    <div class="nav-dot"></div>OPTIMIZE
-                </div>
-                <div class="nav-item" onclick="openTab(event,'memory')">
-                    <div class="nav-dot"></div>MEMORY
-                </div>
-                <div class="nav-item" onclick="openTab(event,'antiban')">
-                    <div class="nav-dot"></div>ANTI-BAN
-                </div>
-                <div class="nav-item" onclick="openTab(event,'network')">
-                    <div class="nav-dot"></div>NETWORK
-                </div>
-                <div class="nav-item" onclick="openTab(event,'setting')">
-                    <div class="nav-dot"></div>SETTING
-                </div>
+                <div class="nav-item active" onclick="openTab(event,'combat')"><div class="nav-dot"></div>COMBAT</div>
+                <div class="nav-item" onclick="openTab(event,'sensitive')"><div class="nav-dot"></div>SENSITIVE</div>
+                <div class="nav-item" onclick="openTab(event,'optimize')"><div class="nav-dot"></div>OPTIMIZE</div>
+                <div class="nav-item" onclick="openTab(event,'memory')"><div class="nav-dot"></div>MEMORY</div>
+                <div class="nav-item" onclick="openTab(event,'antiban')"><div class="nav-dot"></div>ANTI-BAN</div>
+                <div class="nav-item" onclick="openTab(event,'network')"><div class="nav-dot"></div>NETWORK</div>
+                <div class="nav-item" onclick="openTab(event,'setting')"><div class="nav-dot"></div>SETTING</div>
             </div>
             <div class="sidebar-bottom">
-                <button class="inject-btn" onclick="openInject()">
-                    ⚡ INJECT
-                </button>
+                <button class="inject-btn" onclick="openInject()">⚡ OPTIMIZE</button>
             </div>
         </div>
 
-        <!-- CONTENT AREA (เหมือนเดิมทุกประการ) -->
+        <!-- CONTENT AREA (English) -->
         <div class="content-area">
             <!-- COMBAT -->
             <div id="combat" class="content active">
@@ -545,10 +528,6 @@
                 <div class="slider-box">
                     <div class="slider-row"><span>TOUCH RESPONSE</span><span class="val-lbl" id="ms-val">0.5ms</span></div>
                     <input type="range" min="0.1" max="5.0" step="0.1" value="0.5" oninput="updateVal('ms-val', this.value+'ms')">
-                </div>
-                <div class="slider-box">
-                    <div class="slider-row"><span>SCOPE SENS (4x)</span><span class="val-lbl" id="scope4-val">40</span></div>
-                    <input type="range" min="0" max="100" value="40" oninput="updateVal('scope4-val', this.value)">
                 </div>
                 <div class="grid-2">
                     <div class="opt-item"><input type="checkbox" onchange="notify(this)"> Anti-Shake 3.0</div>
@@ -638,7 +617,7 @@
                 </div>
             </div>
 
-            <!-- SETTING (Theme default เปลี่ยนเป็น cyan) -->
+            <!-- SETTING -->
             <div id="setting" class="content">
                 <div class="section-hdr">THEME PRESETS</div>
                 <div class="theme-grid">
@@ -685,28 +664,27 @@
         <!-- CONSOLE LOGS -->
         <div class="console-panel" id="console-logs">
             <div style="font-family:'Orbitron'; font-size:8px; color:var(--accent); margin-bottom:5px; text-align:center;">SYSTEM LOG</div>
-            <div id="log-text">[ PATO IOS v3 ] System Ready...</div>
+            <div id="log-text">[ PATO iOS ] System Ready...</div>
         </div>
     </div>
 
     <!-- FOOTER -->
     <div class="footer-bar">
-        <span>HWID: <b id="hwid-val"></b></span>
-        <span>PING: <b id="ping-val">24ms</b></span>
-        <span>SERVER: <b>ASIA-SG</b></span>
+        <span>UDID: <b id="hwid-val"></b></span>
+        <span>PING: <b id="ping-val">12ms</b></span>
         <span>STATUS: <b style="color:#34c759">● ONLINE</b></span>
     </div>
 
-    <!-- INJECT MODAL (คง Android ไว้ตามเดิม) -->
+    <!-- iOS DEVICE SELECTION MODAL (English) -->
     <div id="inject-modal">
         <div class="modal-header">
-            <span>⚡ PATO ANDROID INJECTOR</span>
+            <span>⚡ iOS PERFORMANCE OPTIMIZER</span>
             <span style="font-size:9px;color:var(--text-dim);cursor:pointer;" onclick="closeInject()">✕ CLOSE</span>
         </div>
         <div class="modal-content">
 
             <div id="phase1" class="phase active">
-                <div style="font-family:'Orbitron';font-size:9px;color:var(--text-dim);margin-bottom:8px;letter-spacing:2px;">COMPILING ANDROID PATCHER...</div>
+                <div style="font-family:'Orbitron';font-size:9px;color:var(--text-dim);margin-bottom:8px;letter-spacing:2px;">INITIALIZING iOS DAEMON...</div>
                 <div id="cpp-log"></div>
                 <div id="phase1-next" style="display:none;">
                     <button class="modal-btn modal-btn-primary" onclick="gotoPhase(2)">SELECT DEVICE ›</button>
@@ -714,32 +692,106 @@
             </div>
 
             <div id="phase2" class="phase">
-                <div class="section-hdr">SELECT ANDROID DEVICE</div>
+                <div class="section-hdr">SELECT iOS DEVICE</div>
                 <div class="device-search">
-                    <input type="text" id="device-search-input" placeholder="🔍 ค้นหารุ่นโทรศัพท์..." oninput="filterDevices()" autocomplete="off">
+                    <input type="text" id="device-search-input" placeholder="🔍 Search iPhone / iPad..." oninput="filterDevices()" autocomplete="off">
                 </div>
                 <div class="device-select-grid" id="device-grid">
-                    <!-- รายชื่อ Android ทั้งหมดยังอยู่ครบ -->
-                    <div class="device-card" data-name="Samsung Galaxy S24 Ultra" onclick="selectDevice(this,'Samsung Galaxy S24 Ultra')"><div class="d-model">Galaxy S24 Ultra</div>Snapdragon 8 Gen 3</div>
-                    <div class="device-card" data-name="Samsung Galaxy S24+" onclick="selectDevice(this,'Samsung Galaxy S24+')"><div class="d-model">Galaxy S24+</div>Exynos 2400</div>
-                    <!-- ... (ใส่รายชื่อ Android ทั้งหมดจากโค้ดเดิม) ... -->
-                    <!-- เพื่อความกระชับ ขอยกตัวอย่างบางส่วน แต่ในไฟล์จริงควรใส่ให้ครบ -->
-                    <div class="device-card" data-name="Samsung Galaxy S24" onclick="selectDevice(this,'Samsung Galaxy S24')"><div class="d-model">Galaxy S24</div>Snapdragon 8 Gen 3</div>
-                    <div class="device-card" data-name="Samsung Galaxy S23 Ultra" onclick="selectDevice(this,'Samsung Galaxy S23 Ultra')"><div class="d-model">Galaxy S23 Ultra</div>Snapdragon 8 Gen 2</div>
-                    <!-- ใส่ให้ครบตามต้นฉบับ -->
+                    <!-- All iPhone models -->
+                    <div class="device-card" data-name="iPhone 16 Pro Max" onclick="selectDevice(this,'iPhone 16 Pro Max')"><div class="d-model">iPhone 16 Pro Max</div>A18 Pro</div>
+                    <div class="device-card" data-name="iPhone 16 Pro" onclick="selectDevice(this,'iPhone 16 Pro')"><div class="d-model">iPhone 16 Pro</div>A18 Pro</div>
+                    <div class="device-card" data-name="iPhone 16 Plus" onclick="selectDevice(this,'iPhone 16 Plus')"><div class="d-model">iPhone 16 Plus</div>A18</div>
+                    <div class="device-card" data-name="iPhone 16" onclick="selectDevice(this,'iPhone 16')"><div class="d-model">iPhone 16</div>A18</div>
+                    <div class="device-card" data-name="iPhone 15 Pro Max" onclick="selectDevice(this,'iPhone 15 Pro Max')"><div class="d-model">iPhone 15 Pro Max</div>A17 Pro</div>
+                    <div class="device-card" data-name="iPhone 15 Pro" onclick="selectDevice(this,'iPhone 15 Pro')"><div class="d-model">iPhone 15 Pro</div>A17 Pro</div>
+                    <div class="device-card" data-name="iPhone 15 Plus" onclick="selectDevice(this,'iPhone 15 Plus')"><div class="d-model">iPhone 15 Plus</div>A16</div>
+                    <div class="device-card" data-name="iPhone 15" onclick="selectDevice(this,'iPhone 15')"><div class="d-model">iPhone 15</div>A16</div>
+                    <div class="device-card" data-name="iPhone 14 Pro Max" onclick="selectDevice(this,'iPhone 14 Pro Max')"><div class="d-model">iPhone 14 Pro Max</div>A16</div>
+                    <div class="device-card" data-name="iPhone 14 Pro" onclick="selectDevice(this,'iPhone 14 Pro')"><div class="d-model">iPhone 14 Pro</div>A16</div>
+                    <div class="device-card" data-name="iPhone 14 Plus" onclick="selectDevice(this,'iPhone 14 Plus')"><div class="d-model">iPhone 14 Plus</div>A15</div>
+                    <div class="device-card" data-name="iPhone 14" onclick="selectDevice(this,'iPhone 14')"><div class="d-model">iPhone 14</div>A15</div>
+                    <div class="device-card" data-name="iPhone 13 Pro Max" onclick="selectDevice(this,'iPhone 13 Pro Max')"><div class="d-model">iPhone 13 Pro Max</div>A15</div>
+                    <div class="device-card" data-name="iPhone 13 Pro" onclick="selectDevice(this,'iPhone 13 Pro')"><div class="d-model">iPhone 13 Pro</div>A15</div>
+                    <div class="device-card" data-name="iPhone 13" onclick="selectDevice(this,'iPhone 13')"><div class="d-model">iPhone 13</div>A15</div>
+                    <div class="device-card" data-name="iPhone 13 mini" onclick="selectDevice(this,'iPhone 13 mini')"><div class="d-model">iPhone 13 mini</div>A15</div>
+                    <div class="device-card" data-name="iPhone 12 Pro Max" onclick="selectDevice(this,'iPhone 12 Pro Max')"><div class="d-model">iPhone 12 Pro Max</div>A14</div>
+                    <div class="device-card" data-name="iPhone 12 Pro" onclick="selectDevice(this,'iPhone 12 Pro')"><div class="d-model">iPhone 12 Pro</div>A14</div>
+                    <div class="device-card" data-name="iPhone 12" onclick="selectDevice(this,'iPhone 12')"><div class="d-model">iPhone 12</div>A14</div>
+                    <div class="device-card" data-name="iPhone 12 mini" onclick="selectDevice(this,'iPhone 12 mini')"><div class="d-model">iPhone 12 mini</div>A14</div>
+                    <div class="device-card" data-name="iPhone 11 Pro Max" onclick="selectDevice(this,'iPhone 11 Pro Max')"><div class="d-model">iPhone 11 Pro Max</div>A13</div>
+                    <div class="device-card" data-name="iPhone 11 Pro" onclick="selectDevice(this,'iPhone 11 Pro')"><div class="d-model">iPhone 11 Pro</div>A13</div>
+                    <div class="device-card" data-name="iPhone 11" onclick="selectDevice(this,'iPhone 11')"><div class="d-model">iPhone 11</div>A13</div>
+                    <div class="device-card" data-name="iPhone XS Max" onclick="selectDevice(this,'iPhone XS Max')"><div class="d-model">iPhone XS Max</div>A12</div>
+                    <div class="device-card" data-name="iPhone XS" onclick="selectDevice(this,'iPhone XS')"><div class="d-model">iPhone XS</div>A12</div>
+                    <div class="device-card" data-name="iPhone XR" onclick="selectDevice(this,'iPhone XR')"><div class="d-model">iPhone XR</div>A12</div>
+                    <div class="device-card" data-name="iPhone X" onclick="selectDevice(this,'iPhone X')"><div class="d-model">iPhone X</div>A11</div>
+                    <div class="device-card" data-name="iPhone 8 Plus" onclick="selectDevice(this,'iPhone 8 Plus')"><div class="d-model">iPhone 8 Plus</div>A11</div>
+                    <div class="device-card" data-name="iPhone 8" onclick="selectDevice(this,'iPhone 8')"><div class="d-model">iPhone 8</div>A11</div>
+                    <div class="device-card" data-name="iPhone 7 Plus" onclick="selectDevice(this,'iPhone 7 Plus')"><div class="d-model">iPhone 7 Plus</div>A10</div>
+                    <div class="device-card" data-name="iPhone 7" onclick="selectDevice(this,'iPhone 7')"><div class="d-model">iPhone 7</div>A10</div>
+                    <div class="device-card" data-name="iPhone 6s Plus" onclick="selectDevice(this,'iPhone 6s Plus')"><div class="d-model">iPhone 6s Plus</div>A9</div>
+                    <div class="device-card" data-name="iPhone 6s" onclick="selectDevice(this,'iPhone 6s')"><div class="d-model">iPhone 6s</div>A9</div>
+                    <div class="device-card" data-name="iPhone 6 Plus" onclick="selectDevice(this,'iPhone 6 Plus')"><div class="d-model">iPhone 6 Plus</div>A8</div>
+                    <div class="device-card" data-name="iPhone 6" onclick="selectDevice(this,'iPhone 6')"><div class="d-model">iPhone 6</div>A8</div>
+                    <div class="device-card" data-name="iPhone SE (3rd)" onclick="selectDevice(this,'iPhone SE 3')"><div class="d-model">iPhone SE 3</div>A15</div>
+                    <div class="device-card" data-name="iPhone SE (2nd)" onclick="selectDevice(this,'iPhone SE 2')"><div class="d-model">iPhone SE 2</div>A13</div>
+                    <div class="device-card" data-name="iPhone SE (1st)" onclick="selectDevice(this,'iPhone SE 1')"><div class="d-model">iPhone SE 1</div>A9</div>
+                    <div class="device-card" data-name="iPhone 5s" onclick="selectDevice(this,'iPhone 5s')"><div class="d-model">iPhone 5s</div>A7</div>
+                    <div class="device-card" data-name="iPhone 5c" onclick="selectDevice(this,'iPhone 5c')"><div class="d-model">iPhone 5c</div>A6</div>
+                    <div class="device-card" data-name="iPhone 5" onclick="selectDevice(this,'iPhone 5')"><div class="d-model">iPhone 5</div>A6</div>
+                    <div class="device-card" data-name="iPhone 4s" onclick="selectDevice(this,'iPhone 4s')"><div class="d-model">iPhone 4s</div>A5</div>
+                    <div class="device-card" data-name="iPhone 4" onclick="selectDevice(this,'iPhone 4')"><div class="d-model">iPhone 4</div>A4</div>
+                    <div class="device-card" data-name="iPhone 3GS" onclick="selectDevice(this,'iPhone 3GS')"><div class="d-model">iPhone 3GS</div></div>
+                    <div class="device-card" data-name="iPhone 3G" onclick="selectDevice(this,'iPhone 3G')"><div class="d-model">iPhone 3G</div></div>
+                    <div class="device-card" data-name="iPhone 2G" onclick="selectDevice(this,'iPhone 2G')"><div class="d-model">iPhone 2G</div></div>
+                    
+                    <!-- All iPad models -->
+                    <div class="device-card" data-name="iPad Pro 13 (M4)" onclick="selectDevice(this,'iPad Pro 13 M4')"><div class="d-model">iPad Pro 13"</div>M4</div>
+                    <div class="device-card" data-name="iPad Pro 11 (M4)" onclick="selectDevice(this,'iPad Pro 11 M4')"><div class="d-model">iPad Pro 11"</div>M4</div>
+                    <div class="device-card" data-name="iPad Air 13 (M2)" onclick="selectDevice(this,'iPad Air 13 M2')"><div class="d-model">iPad Air 13"</div>M2</div>
+                    <div class="device-card" data-name="iPad Air 11 (M2)" onclick="selectDevice(this,'iPad Air 11 M2')"><div class="d-model">iPad Air 11"</div>M2</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (6th)" onclick="selectDevice(this,'iPad Pro 12.9 M2')"><div class="d-model">iPad Pro 12.9</div>M2</div>
+                    <div class="device-card" data-name="iPad Pro 11 (4th)" onclick="selectDevice(this,'iPad Pro 11 M2')"><div class="d-model">iPad Pro 11</div>M2</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (5th)" onclick="selectDevice(this,'iPad Pro 12.9 M1')"><div class="d-model">iPad Pro 12.9</div>M1</div>
+                    <div class="device-card" data-name="iPad Pro 11 (3rd)" onclick="selectDevice(this,'iPad Pro 11 M1')"><div class="d-model">iPad Pro 11</div>M1</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (4th)" onclick="selectDevice(this,'iPad Pro 12.9 A12Z')"><div class="d-model">iPad Pro 12.9</div>A12Z</div>
+                    <div class="device-card" data-name="iPad Pro 11 (2nd)" onclick="selectDevice(this,'iPad Pro 11 A12Z')"><div class="d-model">iPad Pro 11</div>A12Z</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (3rd)" onclick="selectDevice(this,'iPad Pro 12.9 A12X')"><div class="d-model">iPad Pro 12.9</div>A12X</div>
+                    <div class="device-card" data-name="iPad Pro 11 (1st)" onclick="selectDevice(this,'iPad Pro 11 A12X')"><div class="d-model">iPad Pro 11</div>A12X</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (2nd)" onclick="selectDevice(this,'iPad Pro 12.9 A10X')"><div class="d-model">iPad Pro 12.9</div>A10X</div>
+                    <div class="device-card" data-name="iPad Pro 10.5" onclick="selectDevice(this,'iPad Pro 10.5')"><div class="d-model">iPad Pro 10.5</div>A10X</div>
+                    <div class="device-card" data-name="iPad Pro 9.7" onclick="selectDevice(this,'iPad Pro 9.7')"><div class="d-model">iPad Pro 9.7</div>A9X</div>
+                    <div class="device-card" data-name="iPad Pro 12.9 (1st)" onclick="selectDevice(this,'iPad Pro 12.9 A9X')"><div class="d-model">iPad Pro 12.9</div>A9X</div>
+                    <div class="device-card" data-name="iPad Air (5th)" onclick="selectDevice(this,'iPad Air 5')"><div class="d-model">iPad Air 5</div>M1</div>
+                    <div class="device-card" data-name="iPad Air (4th)" onclick="selectDevice(this,'iPad Air 4')"><div class="d-model">iPad Air 4</div>A14</div>
+                    <div class="device-card" data-name="iPad Air (3rd)" onclick="selectDevice(this,'iPad Air 3')"><div class="d-model">iPad Air 3</div>A12</div>
+                    <div class="device-card" data-name="iPad Air 2" onclick="selectDevice(this,'iPad Air 2')"><div class="d-model">iPad Air 2</div>A8X</div>
+                    <div class="device-card" data-name="iPad Air (1st)" onclick="selectDevice(this,'iPad Air 1')"><div class="d-model">iPad Air</div>A7</div>
+                    <div class="device-card" data-name="iPad (10th)" onclick="selectDevice(this,'iPad 10')"><div class="d-model">iPad 10</div>A14</div>
+                    <div class="device-card" data-name="iPad (9th)" onclick="selectDevice(this,'iPad 9')"><div class="d-model">iPad 9</div>A13</div>
+                    <div class="device-card" data-name="iPad (8th)" onclick="selectDevice(this,'iPad 8')"><div class="d-model">iPad 8</div>A12</div>
+                    <div class="device-card" data-name="iPad (7th)" onclick="selectDevice(this,'iPad 7')"><div class="d-model">iPad 7</div>A10</div>
+                    <div class="device-card" data-name="iPad (6th)" onclick="selectDevice(this,'iPad 6')"><div class="d-model">iPad 6</div>A10</div>
+                    <div class="device-card" data-name="iPad (5th)" onclick="selectDevice(this,'iPad 5')"><div class="d-model">iPad 5</div>A9</div>
+                    <div class="device-card" data-name="iPad mini (6th)" onclick="selectDevice(this,'iPad mini 6')"><div class="d-model">iPad mini 6</div>A15</div>
+                    <div class="device-card" data-name="iPad mini (5th)" onclick="selectDevice(this,'iPad mini 5')"><div class="d-model">iPad mini 5</div>A12</div>
+                    <div class="device-card" data-name="iPad mini 4" onclick="selectDevice(this,'iPad mini 4')"><div class="d-model">iPad mini 4</div>A8</div>
+                    <div class="device-card" data-name="iPad mini 3" onclick="selectDevice(this,'iPad mini 3')"><div class="d-model">iPad mini 3</div>A7</div>
+                    <div class="device-card" data-name="iPad mini 2" onclick="selectDevice(this,'iPad mini 2')"><div class="d-model">iPad mini 2</div>A7</div>
+                    <div class="device-card" data-name="iPad mini (1st)" onclick="selectDevice(this,'iPad mini 1')"><div class="d-model">iPad mini</div>A5</div>
                 </div>
-                <button class="modal-btn modal-btn-primary" id="phase2-next" style="display:none;" onclick="gotoPhase(3)">SELECT GAME ›</button>
+                <button class="modal-btn modal-btn-primary" id="phase2-next" style="display:none;" onclick="gotoPhase(3)">SELECT PROFILE ›</button>
             </div>
 
             <div id="phase3" class="phase">
-                <div class="section-hdr">SELECT GAME</div>
-                <button class="game-choice-btn" onclick="launchGame('Free Fire')">
-                    FREE FIRE NORMAL
-                    <span class="game-badge badge-ff">FF</span>
+                <div class="section-hdr">SELECT PROFILE</div>
+                <button class="game-choice-btn" onclick="launchOptimize('Performance')">
+                    PERFORMANCE MODE
+                    <span class="game-badge badge-ff">MAX</span>
                 </button>
-                <button class="game-choice-btn" onclick="launchGame('Free Fire MAX')">
-                    FREE FIRE MAX
-                    <span class="game-badge badge-max">MAX</span>
+                <button class="game-choice-btn" onclick="launchOptimize('Balanced')">
+                    BALANCED MODE
+                    <span class="game-badge badge-max">SAFE</span>
                 </button>
             </div>
 
@@ -750,7 +802,7 @@
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // JavaScript คงเดิมทั้งหมด (ไม่ลบ Android functionality)
+    // JavaScript (English log messages)
     let isMemoryActive = false;
     let soundEnabled = true;
     let selectedDevice = '';
@@ -842,17 +894,17 @@
             popClick();
             document.getElementById('loading-container').style.display = 'block';
             let p = 0;
-            const msgs = ["INITIALIZING IOS ENGINE","LOADING COMBAT MODULE","LOADING SENSITIVE CFG","LOADING MEMORY BOOST","CONNECTING GLOBAL SERVER","AUTHENTICATING HWID","READY"];
+            const msgs = ["INITIALIZING iOS ENGINE","LOADING COMBAT MODULE","LOADING SENSITIVITY","LOADING MEMORY BOOST","CONNECTING SERVER","AUTHENTICATING","READY"];
             const inv = setInterval(() => {
                 p += Math.floor(Math.random()*12)+3;
                 if(p >= 100) {
                     p = 100; clearInterval(inv);
-                    document.getElementById('p-text').innerText = "IOS ENGINE READY ✓";
+                    document.getElementById('p-text').innerText = "iOS ENGINE READY ✓";
                     setTimeout(() => {
                         document.getElementById('login-screen').style.display = 'none';
                         document.getElementById('main-panel').style.display = 'flex';
-                        addLog("Authenticated → PATO IOS PANEL");
-                        addLog("HWID Verified ✓");
+                        addLog("Authenticated → PATO iOS");
+                        addLog("UDID Verified ✓");
                         addLog("Server Connected ✓");
                         refreshThemeColors();
                         initParticles('#00e5ff');
@@ -892,31 +944,14 @@
     }
     function toggleMemory(cb) { isMemoryActive = cb.checked; notify(cb); addLog(cb.checked ? "MEMORY ULTRA MODE ON" : "Memory Ultra OFF"); }
 
-    // ===== INJECT =====
+    // Modal functions
     const cppLines = [
-        {t:'dim', m:'// PATO ANDROID INJECTOR v3.0.1'},
-        {t:'dim', m:'// Copyright (c) 2025 PatoTeam. All rights reserved.'},
-        {t:'dim', m:''},
-        {t:'green', m:'#include <PatoEngine.h>'},
-        {t:'green', m:'#include <MemoryPatch.h>'},
-        {t:'green', m:'#include <AntiDetect.h>'},
-        {t:'dim', m:''},
-        {t:'yellow', m:'[INIT] Loading PATO kernel modules (Android)...'},
-        {t:'green', m:'[OK] PatoEngine::init() → success'},
-        {t:'green', m:'[OK] AntiDetect::bypass() → stealth mode active'},
-        {t:'yellow', m:'[SCAN] Scanning Android process list...'},
-        {t:'green', m:'[OK] Target process located: com.dts.freefireth'},
-        {t:'yellow', m:'[PATCH] Applying memory patches...'},
-        {t:'green', m:'[OK] Combat.dll → patched (0xFF3A → 0x90 NOP)'},
-        {t:'green', m:'[OK] Sensitive.dll → patched'},
-        {t:'green', m:'[OK] FPSOptimizer.dll → patched'},
-        {t:'green', m:'[OK] MemoryBoost.dll → patched'},
-        {t:'yellow', m:'[VERIFY] Verifying inject integrity...'},
-        {t:'green', m:'[OK] Checksum valid: 0xANDROID3F9A'},
-        {t:'green', m:'[OK] HWID spoofing active'},
-        {t:'green', m:'[OK] SSL certificate bypassed'},
-        {t:'yellow', m:'[READY] All modules loaded successfully!'},
-        {t:'green', m:'[PATO] ✓ Inject complete → select device'},
+        {t:'dim', m:'// PATO iOS PERFORMANCE DAEMON v3.0'},
+        {t:'green', m:'#include <IOKit/IOKitLib.h>'},
+        {t:'yellow', m:'[INIT] Loading iOS kernel services...'},
+        {t:'green', m:'[OK] CPU power management patched'},
+        {t:'green', m:'[OK] GPU render optimization applied'},
+        {t:'yellow', m:'[READY] Select your iOS device'},
     ];
 
     function openInject() {
@@ -930,7 +965,7 @@
 
     function closeInject() {
         document.getElementById('inject-modal').classList.remove('show');
-        addLog("Inject cancelled");
+        addLog("Optimizer closed");
     }
 
     function resetPhases() {
@@ -952,7 +987,7 @@
         const typeNext = () => {
             if(i >= cppLines.length) {
                 document.getElementById('phase1-next').style.display='block';
-                addLog("Inject engine compiled ✓");
+                addLog("iOS daemon ready ✓");
                 return;
             }
             const line = cppLines[i++];
@@ -996,19 +1031,16 @@
         addLog("Device: " + name);
     }
 
-    function launchGame(g) {
+    function launchOptimize(profile) {
         popClick();
-        addLog("Launching: " + g + " on " + selectedDevice);
+        addLog(`Applying ${profile} profile for ${selectedDevice}`);
         const t = document.getElementById('toast');
-        t.innerText = "⚡ LAUNCHING " + (g.includes('MAX')?'FF MAX':'FREE FIRE');
+        t.innerText = `⚡ ${profile} MODE ACTIVE`;
         t.className = "toast-on";
-        setTimeout(() => {
-            t.className = "";
-            window.location.href = g.includes("MAX") ? "freefiremax://" : "freefire://";
-        }, 1500);
+        setTimeout(() => { t.className = ""; closeInject(); }, 2000);
     }
 
-    // ===== THEME =====
+    // Theme
     const themes = {
         cyan:   { accent:'#00e5ff', accent2:'#0077ff' },
         red:    { accent:'#ff3b30', accent2:'#ff6d00' },
@@ -1086,18 +1118,17 @@
         }
     }
 
-    // HWID & FPS ticker
+    // UDID & FPS
     document.getElementById('hwid-val').innerText = Math.random().toString(36).substr(2,8).toUpperCase();
     setInterval(() => {
         const min = isMemoryActive ? 210 : 55;
         const max = isMemoryActive ? 240 : 65;
         const fps = (Math.random()*(max-min)+min).toFixed(1);
         document.getElementById('top-fps').innerText = `∿ ${fps} FPS`;
-        document.getElementById('ping-val').innerText = (Math.random()*8+18).toFixed(0) + "ms";
+        document.getElementById('ping-val').innerText = (Math.random()*8+8).toFixed(0) + "ms";
     }, 700);
 
     window.onload = function() {
-        // ตั้ง default theme เป็น cyan
         document.querySelectorAll('.theme-chip').forEach(c=>c.classList.remove('selected'));
         document.getElementById('theme-cyan').classList.add('selected');
         document.querySelector('#setting .color-pick-row:first-child input').value = '#00e5ff';
@@ -1107,4 +1138,4 @@
     };
 </script>
 </body>
-</html>
+                                                                                                                                                                      </html>
